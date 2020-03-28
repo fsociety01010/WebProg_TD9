@@ -18,16 +18,23 @@ body(background-color="rgb(151, 151, 151)")
       .form-row
         .form-group.col-md-6()
           h3 A : 
-          input#A.form-control(type='text', name='A', maxlength='49', pattern='^[a|c|g|t|A|C|G|T]*$', required='required')
+          input#A.form-control(type='text', name='A', maxlength='49', pattern='^[a|c|g|t|A|C|G|T]*$',  placeholder='Enter first DNA' required='required')
         .form-group.col-md-6()
           h3 B :
-          input#B.form-control(type='text', name='B', maxlength='49', pattern='^[a|c|g|t|A|C|G|T]*$', required='required')
+          input#B.form-control(type='text', name='B', maxlength='49', pattern='^[a|c|g|t|A|C|G|T]*$',  placeholder='Enter second DNA' required='required')
       input#SubmitButton.btn.btn-primary.btn.btn-secondary.btn-lg.btn-block(type='submit', value="Calculate")
   hr.style14
-  #Results.container.left_div(display="none")
-    h3#UserRes.text  
-    h4#nbRequestRes.text
-    h4#DateRes.text
-    h3#A_res.text
-    h3#B_res.text
-    h3#DistanceRes.text
+  #result.container.left_div(display='none')
+  .container.left_div
+    h4.font-weight-bold(style='display:none') User:
+    h5#UserRes.text
+    h4.font-weight-bold(style='display:none') Number of requests:
+    h5#nbRequestRes.text
+    h4.font-weight-bold(style='display:none') Date:
+    h5#DateRes.text
+    h4.font-weight-bold(style='display:none') A:
+    h5#A_res.text
+    h4.font-weight-bold(style='display:none') B:
+    h5#B_res.text
+    h4.font-weight-bold(style='display:none') Distance:
+    h5#DistanceRes.text

@@ -35,7 +35,7 @@ function resetUserNbRequest() {
 }
 
 function getUserNbRequest(user) {
-    return userList.get(user).nbRequest
+    return userList.get(user).nbRequest;
 }
 
 function getDate() {
@@ -69,21 +69,22 @@ app.use(express.static('public'))
                 "user": user,
                 "error": "You exceed the limit, wait a little bit"
             })
-        } else if (!userList.has(user))
+        } else if (!(userList.has(user))) {
             res.status(403).json({
                 "user": user,
                 "error": "You don't have permissions!"
             })
-        else if (A.length > 50 || B.length > 50)
+        } else if (A.length > 50 || B.length > 50) {
             res.status(404).json({
                 "user": user,
                 "error": "Your array is too long, max size is 50 characters"
             })
-        else if (!regExpDNA.test(A) || !regExpDNA.test(B))
+        } else if (!regExpDNA.test(A) || !regExpDNA.test(B)) {
             res.status(404).json({
                 "user": user,
                 "error": "That's not an array of ADN letters"
             })
+        }
     })
 app.get("/about", function(request, response) {
 
