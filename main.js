@@ -88,7 +88,7 @@ app.use(express.static('public'))
     })
 app.get("/about", function(request, response) {
 
-    response.send("<h1>It's a site about DNA and BigBROTHER!</h1>");
+    response.send("<h1>It's a site about DNA!</h1>");
 });
 app.get("/contact", function(request, response) {
 

@@ -1,12 +1,11 @@
 TD9
 Agarkov Oleksandr
 
-To run the server with site enter: node main.js
-
+To run the server enter: node main.js
 server-adress: localhost:5000
 
 
-Site: https://xfilesdnatest.herokuapp.com/
+Site on Heroku: https://xfilesdnatest.herokuapp.com/
 
 
 The list of users:

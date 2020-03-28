@@ -2,7 +2,7 @@
     "name": "td9_agarkov",
     "version": "1.0.0",
     "description": "js express heroku",
-    "main": "index.js",
+    "main": "main.js",
     "private": true,
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
