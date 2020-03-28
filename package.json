@@ -1,0 +1,19 @@
+{
+    "name": "td9_agarkov",
+    "version": "1.0.0",
+    "description": "js express heroku",
+    "main": "index.js",
+    "private": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node main.js"
+    },
+    "author": "Agarkov Oleksandr",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "js-levenshtein": "^1.1.6",
+        "pug": "^2.0.4"
+    },
+    "devDependencies": {}
+}

@@ -1,0 +1,32 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+  link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+  link(rel='shortcut icon', href='icon.png', type='image/x-icon')
+  script(src='DNA_Form.js')
+  title DNA Levenshtein
+body(background-color="rgb(151, 151, 151)")
+  h1.text-center DNA Levenshtein
+  .container.left_div
+    form#DNA(action='/distance', name='DNA', method='GET')
+      .form-group
+        h3 Username : 
+        input#username.form-control(type='text', name='username', placeholder='Enter your username', required='required')
+      .form-row
+        .form-group.col-md-6()
+          h3 A : 
+          input#A.form-control(type='text', name='A', maxlength='49', pattern='^[a|c|g|t|A|C|G|T]*$', required='required')
+        .form-group.col-md-6()
+          h3 B :
+          input#B.form-control(type='text', name='B', maxlength='49', pattern='^[a|c|g|t|A|C|G|T]*$', required='required')
+      input#SubmitButton.btn.btn-primary.btn.btn-secondary.btn-lg.btn-block(type='submit', value="Calculate")
+  hr.style14
+  #Results.container.left_div(display="none")
+    h3#UserRes.text  
+    h4#nbRequestRes.text
+    h4#DateRes.text
+    h3#A_res.text
+    h3#B_res.text
+    h3#DistanceRes.text
