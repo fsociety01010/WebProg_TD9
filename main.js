@@ -9,6 +9,8 @@ const port = process.env.PORT || 5000
 const compiledFunction = pug.compileFile('index.pug');
 const regExpDNA = new RegExp("^[a|c|g|t|A|C|G|T]*$")
 
+var totalRequest = 0
+
 let userList = new Map([
     ["co0101", { nbRequest: 0 }],
     ["ro010101", { nbRequest: 0 }],
@@ -24,8 +26,9 @@ let userList = new Map([
     ["nds11110", { nbRequest: 0 }],
 ])
 
-function incrementUserNbRequest(user) {
+function incrementAllNbRequest(user) {
     userList.set(user, { nbRequest: userList.get(user).nbRequest + 1 })
+    totalRequest++
 }
 
 function resetUserNbRequest() {
@@ -55,7 +58,7 @@ app.use(express.static('public'))
         const B = req.query.B
         const user = req.params.user
         if (userList.has(user) && getUserNbRequest(user) < 5 && A.length <= 50 && B.length <= 50 && regExpDNA.test(A) && regExpDNA.test(B)) {
-            incrementUserNbRequest(user)
+            incrementAllNbRequest(user)
             res.status(200).json({
                 "user": user,
                 "nbRequest": getUserNbRequest(user),
@@ -63,6 +66,7 @@ app.use(express.static('public'))
                 "A": A,
                 "B": B,
                 "distance": levenshtein(A, B),
+                "totalRequest": totalRequest
             })
         } else if (!(getUserNbRequest(user) < 5)) {
             res.status(403).json({

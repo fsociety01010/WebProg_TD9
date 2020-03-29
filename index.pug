@@ -2,13 +2,19 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
-  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
   link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
   link(rel='shortcut icon', href='icon.png', type='image/x-icon')
   script(src='DNA_Form.js')
-  title DNA Levenshtein
-body(background-color="rgb(151, 151, 151)")
-  h1.text-center DNA Levenshtein
+  title DNA Service
+  style.
+    html, body {
+    background-color: #d9d9d9;
+    height: 100%;
+    }
+body
+  br.
+  h1.text-center(style='font-style:italic;') Welcome to our DNA Service
   hr.style14
   .container.left_div
     form#DNA(action='/distance', name='DNA', method='GET')
@@ -16,25 +22,29 @@ body(background-color="rgb(151, 151, 151)")
         h3 Username : 
         input#username.form-control(type='text', name='username', placeholder='Enter your username', required='required')
       .form-row
-        .form-group.col-md-6()
+        .form-group.col-md-6
           h3 A : 
-          input#A.form-control(type='text', name='A', maxlength='49', pattern='^[a|c|g|t|A|C|G|T]*$',  placeholder='Enter first DNA' required='required')
-        .form-group.col-md-6()
+          input#A.form-control(type='text', name='A', maxlength='49', pattern='^[a|c|g|t|A|C|G|T]*$', placeholder='Enter first DNA', required='required')
+        .form-group.col-md-6
           h3 B :
-          input#B.form-control(type='text', name='B', maxlength='49', pattern='^[a|c|g|t|A|C|G|T]*$',  placeholder='Enter second DNA' required='required')
-      input#SubmitButton.btn.btn-primary.btn.btn-secondary.btn-lg.btn-block(type='submit', value="Calculate")
+          input#B.form-control(type='text', name='B', maxlength='49', pattern='^[a|c|g|t|A|C|G|T]*$', placeholder='Enter second DNA', required='required')
+      input.button.btn.btn-outline-dark.btn-lg.btn-block(type='submit', value='Calculate')
   hr.style14
-  #result.container.left_div(display='none')
-  .container.left_div
-    h4.font-weight-bold(style='display:none') User:
+  #result.container.left_div(style='background-color:#d9d9d9;', display='none')
+    h4.font-weight-bold(style='display:none;') User:
     h5#UserRes.text
-    h4.font-weight-bold(style='display:none') Number of requests:
+    h4.font-weight-bold(style='display:none;') Number of user's requests:
     h5#nbRequestRes.text
-    h4.font-weight-bold(style='display:none') Date:
+    h4.font-weight-bold(style='display:none;') Date:
     h5#DateRes.text
-    h4.font-weight-bold(style='display:none') A:
+    h4.font-weight-bold(style='display:none;') A:
     h5#A_res.text
-    h4.font-weight-bold(style='display:none') B:
+    h4.font-weight-bold(style='display:none;') B:
     h5#B_res.text
-    h4.font-weight-bold(style='display:none') Distance:
+    h4.font-weight-bold(style='display:none;') Distance:
     h5#DistanceRes.text
+    h4.font-weight-bold(style='display:none;') Total request:
+    h5#totalRequest.text
+    button#reset.btn.btn-outline-dark.btn-lg(onclick='reset()' value='Reset' style='display:none') Reset
+  hr.style14
+  
