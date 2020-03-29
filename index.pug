@@ -19,14 +19,14 @@ body
   .container.left_div
     form#DNA(action='/distance', name='DNA', method='GET')
       .form-group
-        h3 Username : 
+        h3 Username: 
         input#username.form-control(type='text', name='username', placeholder='Enter your username', required='required')
       .form-row
         .form-group.col-md-6
-          h3 A : 
+          h3 A: 
           input#A.form-control(type='text', name='A', maxlength='49', pattern='^[a|c|g|t|A|C|G|T]*$', placeholder='Enter first DNA', required='required')
         .form-group.col-md-6
-          h3 B :
+          h3 B:
           input#B.form-control(type='text', name='B', maxlength='49', pattern='^[a|c|g|t|A|C|G|T]*$', placeholder='Enter second DNA', required='required')
       input.button.btn.btn-outline-dark.btn-lg.btn-block(type='submit', value='Calculate')
   hr.style14
