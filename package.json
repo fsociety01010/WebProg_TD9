@@ -11,7 +11,7 @@
     "author": "Agarkov Oleksandr",
     "license": "ISC",
     "dependencies": {
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "js-levenshtein": "^1.1.6",
         "pug": "^2.0.4"
     },
